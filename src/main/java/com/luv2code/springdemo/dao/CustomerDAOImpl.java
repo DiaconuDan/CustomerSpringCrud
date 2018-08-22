@@ -23,7 +23,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 				
-		// create a query  ... sort by last name
+		
 		Query<Customer> theQuery = 
 				currentSession.createQuery("from Customer order by lastName",
 											Customer.class);
@@ -41,7 +41,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 		// get current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		// save/upate the customer ... finally LOL
 		currentSession.saveOrUpdate(theCustomer);
 		
 	}
@@ -64,7 +63,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
 		
-		// delete object with primary key
+		
 		Query theQuery = 
 				currentSession.createQuery("delete from Customer where id=:customerId");
 		theQuery.setParameter("customerId", theId);
